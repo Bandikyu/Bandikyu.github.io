@@ -502,20 +502,17 @@ h2 {
     display: flex;
     align-items: center;
     justify-content: center;
-
+    border: 2px solid;
 }
     .square-contact {
-        /* display: flex;
-        flex-direction: column;
-        align-items: center; */
         --dimension-square-contact: 200px;
         margin: 10px;
         width: calc(var(--dimension-square-contact) / 1);
         height: var(--dimension-square-contact);
-        background-color: var(--main-bg-color);
         transition: 0.2s;
         border-radius: 5px;
         font-size: 1.2rem;
+        position: relative;
     }
         .square-contact:nth-child(4)>p {
             font-size: 0;
@@ -523,7 +520,7 @@ h2 {
             :hover.square-contact:nth-child(4)>p {
                 border-top: 1px solid rgb(128, 0, 64);
                 text-align: center;
-                height: 15%;
+                height: 18%;
                 font-size: 1.02rem;
                 transition: 0.2s;
                 padding-top: 6px;
@@ -533,6 +530,7 @@ h2 {
             margin-bottom: 15px;
         }
         .square-contact a {
+            background-color: var(--main-bg-color);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -541,22 +539,78 @@ h2 {
             height: 100%;
             transition: 0.2s;
         }
+            div .mail-direction {
+                /* display: none; */
+            }
+                .square-contact:nth-child(3):hover .mail-direction {
+                    animation: desaparece;
+                    animation-duration: 1s;
+                    animation-fill-mode: forwards;
+                }
+            div .mail-affair {
+                position: relative;
+                /* display: flex; */
+                flex-direction: row;
+                justify-items: center;
+                align-content: center;
+                height: 50%;
+                margin: 1px 0;
+                display: none;
+            }
+                .square-contact:nth-child(3):hover .mail-affair {
+                    animation: aparece;
+                    animation-duration: 1s;
+                    animation-fill-mode: forwards;
+                }
+            @keyframes desaparece {
+                0% {opacity: 1;}
+                90%{opacity: 0;}
+                100% {display: none;}
+            }
+            @keyframes aparece {
+                0% {display: flex;}
+                10% {opacity: 0;}
+                100% {opacity: 1;}
+            }
+                .square-contact:nth-child(3) {
+                    /* font-size: 1rem; */
+                    display: flex;
+                    flex-direction: column;
+                }
+                    .square-contact:nth-child(3):hover {
+                        bottom: 0;
+                        box-shadow: none;
+                    }
+                    .square-contact:nth-child(3) .mail-affair:hover {
+                        box-shadow: 0 3px 8px -8px;
+                        bottom: 1px;
+                        transition: .2s;
+                    }
+            div .mail-affair img {
+                margin: 0 10px 0;
+                width: 40px;
+            }
+
+
             :hover.square-contact {
                 box-shadow: 0 3px 12px -8px;
                 position: relative;
                 bottom: 2px;
                 transition: 0.2s;
             }
+            .square-contact:nth-child(4) {
+            background-color: var(--main-bg-color);
+            }
                 :hover.square-contact:nth-child(4)>a {
-                    margin-bottom: -7px;
+                    margin-bottom: -2%;
                     height: 85%;
                     transition: 0.2s;
                 }
-            :active.square-contact {
+            /* :active.square-contact {
                 box-shadow: none;
                 position: static;
                 transition: 0.2s;
-            }
+            } */
 
 /* INICIO HOME */
 .start {
